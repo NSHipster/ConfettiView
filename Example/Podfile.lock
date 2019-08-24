@@ -1,0 +1,16 @@
+PODS:
+  - ConfettiView-NSHipster (0.1.0)
+
+DEPENDENCIES:
+  - ConfettiView-NSHipster (from `../`)
+
+EXTERNAL SOURCES:
+  ConfettiView-NSHipster:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ConfettiView-NSHipster: 4592e580b9a516106b64c735a777fef7c2c7c299
+
+PODFILE CHECKSUM: 496d8382333330f9d0060f753155793201d3144c
+
+COCOAPODS: 1.7.5

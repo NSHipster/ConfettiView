@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+use_frameworks!
+
+target 'ConfettiView_Example' do
+  platform :ios, '11.0'
+
+  pod 'ConfettiView-NSHipster', path: '../'
+
+  target 'ConfettiView_Tests' do
+    inherit! :search_paths
+  end
+end
