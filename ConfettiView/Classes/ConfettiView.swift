@@ -103,6 +103,9 @@ public final class ConfettiView: UIView {
 
         /// A string of characters.
         case text(String)
+        
+        /// A string of characters with specified size
+        case texWithtSize(String, CGFloat)
     }
 
     // MARK: -
@@ -212,6 +215,11 @@ fileprivate extension ConfettiView.Content {
             ]
 
             return NSAttributedString(string: "\(string)", attributes: defaultAttributes).image()
+        case let .texWithtSize(string, size):
+            let defaultAttributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.systemFont(ofSize: size)
+            ]
+             return NSAttributedString(string: "\(string)", attributes: defaultAttributes).image()
         }
     }
 }

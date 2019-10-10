@@ -34,7 +34,7 @@ extension ViewController: WKNavigationDelegate {
 
         confetti.emit(with: [
             .text("👨🏻"),
-            .text("📱"),
+            .texWithtSize("📱", 32.0),
             .shape(.circle, .purple),
             .shape(.triangle, .lightGray),
             .image(star, .orange)
