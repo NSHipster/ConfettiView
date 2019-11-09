@@ -40,7 +40,7 @@ clone the repo and run `pod install` from the Example directory.
 
 ## Installation
 
-You can install AnyCodable via [CocoaPods](https://cocoapods.org)
+You can install ConfettiView via [CocoaPods](https://cocoapods.org)
 by adding the following line to your `Podfile`:
 
 ```ruby
