@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/nshipster'
 
   s.ios.deployment_target = '10.0'
-  s.swift_versions = ['4.0', '4.2', '5.0']
+  s.swift_versions = ['5.1']
 
   s.source_files = 'ConfettiView/Classes/**/*'
 
