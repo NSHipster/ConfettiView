@@ -72,7 +72,11 @@ public final class ConfettiView: UIView {
     // MARK: UIView
 
     override public func willMove(toSuperview newSuperview: UIView?) {
-        guard let superview = newSuperview else { return }
+        guard let superview = newSuperview else {
+            self.layer.removeAllAnimations()
+            return
+        }
+
         frame = superview.bounds
         isUserInteractionEnabled = false
     }
