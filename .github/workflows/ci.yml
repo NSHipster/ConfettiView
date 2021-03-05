@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+    paths:
+      - .github/workflows/ci.yml
+      - "**/*.swift"
+
+jobs:
+  cocoapods:
+    runs-on: macos-latest
+
+    name: Validate CocoaPods specification
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Lint podspec file
+        run: pod lib lint
+
+  build:
+    runs-on: macos-latest
+
+    strategy:
+      matrix:
+        include:
+          - os: iOS
+            destination: platform=iOS Simulator,name=iPhone 11
+
+    name: "Build ${{ matrix.os }}"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Initialize Example project
+        run: pod install --project-directory=Example
+      - name: Build
+        run: >-
+          xcodebuild build
+          -workspace Example/ConfettiView.xcworkspace
+          -scheme ConfettiView-Example 
+          -destination '${{ matrix.destination }}'
