@@ -21,16 +21,21 @@ jobs:
       - name: Lint podspec file
         run: pod lib lint
 
-  build:
+  swift_build:
     runs-on: macos-latest
 
-    strategy:
-      matrix:
-        include:
-          - os: iOS
-            destination: platform=iOS Simulator,name=iPhone 11
+    name: "Build with Swift Package Manager"
 
-    name: "Build ${{ matrix.os }}"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        run: swift build
+
+  xcodebuild:
+    runs-on: macos-latest
+
+    name: "Build with Xcode"
 
     steps:
       - name: Checkout
@@ -42,4 +47,4 @@ jobs:
           xcodebuild build
           -workspace Example/ConfettiView.xcworkspace
           -scheme ConfettiView-Example 
-          -destination '${{ matrix.destination }}'
+          -destination 'platform=iOS Simulator,name=iPhone 11'
