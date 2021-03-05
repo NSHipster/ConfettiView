@@ -26,6 +26,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Build
         run: >-
-          xcodebuild build -workspace Example/ConfettiView.xcworkspace
-                           -scheme ConfettiView-Example 
-                           -destination '${{ matrix.destination }}'
+          xcodebuild build
+          -workspace Example/ConfettiView.xcworkspace
+          -scheme ConfettiView-Example 
+          -destination '${{ matrix.destination }}'
