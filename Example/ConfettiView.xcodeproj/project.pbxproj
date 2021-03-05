@@ -291,11 +291,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ConfettiView_Example/Pods-ConfettiView_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ConfettiView-NSHipster/ConfettiView_NSHipster.framework",
+				"${BUILT_PRODUCTS_DIR}/ConfettiView-NSHipster/ConfettiView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConfettiView_NSHipster.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConfettiView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
