@@ -13,12 +13,12 @@ jobs:
   cocoapods:
     runs-on: macos-latest
 
-    name: Validate CocoaPods
+    name: Validate CocoaPods specification
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Validate the pod specification
+      - name: Lint podspec file
         run: pod lib lint
 
   build:
@@ -35,7 +35,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Initialize Example Project
+      - name: Initialize Example project
         run: pod install --project-directory=Example
       - name: Build
         run: >-
