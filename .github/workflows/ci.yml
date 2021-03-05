@@ -21,7 +21,18 @@ jobs:
       - name: Lint podspec file
         run: pod lib lint
 
-  build:
+  swift_build:
+    runs-on: macos-latest
+
+    name: "Build with Swift Package Manager"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        run: swift build
+
+  xcodebuild:
     runs-on: macos-latest
 
     strategy:
@@ -30,7 +41,7 @@ jobs:
           - os: iOS
             destination: platform=iOS Simulator,name=iPhone 11
 
-    name: "Build ${{ matrix.os }}"
+    name: "Build with Xcode ${{ matrix.os }}"
 
     steps:
       - name: Checkout
