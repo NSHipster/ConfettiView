@@ -1,5 +1,5 @@
-import XCTest
 import ConfettiView
+import XCTest
 
 class Tests: XCTestCase {
     func testConfettiViewIsNotInteractiveByDefault() {

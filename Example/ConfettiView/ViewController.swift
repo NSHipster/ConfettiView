@@ -1,9 +1,8 @@
+import ConfettiView
 import UIKit
 import WebKit
-import ConfettiView
 
 final class ViewController: UIViewController {
-
     // MARK: @IBOutlet
 
     @IBOutlet private var webView: WKWebView!
@@ -41,4 +40,3 @@ extension ViewController: WKNavigationDelegate {
         ])
     }
 }
-

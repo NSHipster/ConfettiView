@@ -21,6 +21,17 @@ jobs:
       - name: Lint podspec file
         run: pod lib lint
 
+  swiftlint:
+    runs-on: macos-latest
+
+    name: Lint with SwiftLint
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Lint Swift Code
+        run: swiftlint lint --strict --reporter github-actions-logging
+
   swift_build:
     runs-on: macos-latest
 

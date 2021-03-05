@@ -10,7 +10,7 @@ public final class ConfettiView: UIView {
         commonInit()
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
@@ -30,8 +30,7 @@ public final class ConfettiView: UIView {
                     3.0 seconds by default.
     */
     public func emit(with contents: [Content],
-                     for duration: TimeInterval = 3.0)
-    {
+                     for duration: TimeInterval = 3.0) {
         let layer = Layer()
         layer.configure(with: contents)
         layer.frame = self.bounds
