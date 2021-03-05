@@ -27,7 +27,7 @@ confettiView.emit(with: [
 For more information,
 see [the accompanying blog post on NSHipster](https://nshipster.com/caemitterlayer/).
 
-<br clear="both"/> 
+<br clear="both"/>
 
 ## Example
 
@@ -37,6 +37,7 @@ clone the repo and run `pod install` from the Example directory.
 ## Requirements
 
 - iOS 10.0+
+- Swift 5.1+
 
 ## Installation
 

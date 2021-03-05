@@ -102,7 +102,7 @@ public final class ConfettiView: UIView {
         case image(UIImage, UIColor?)
 
         /// A string of characters.
-        case text(String)
+        case text(String, Double = 16.0)
     }
 
     // MARK: -
@@ -206,9 +206,9 @@ fileprivate extension ConfettiView.Content {
             return shape.image(with: .white)
         case let .image(image, _):
             return image
-        case let .text(string):
+        case let .text(string, size):
             let defaultAttributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: 16.0)
+                .font: UIFont.systemFont(ofSize: CGFloat(size))
             ]
 
             return NSAttributedString(string: "\(string)", attributes: defaultAttributes).image()
