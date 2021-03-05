@@ -35,13 +35,7 @@ jobs:
   xcodebuild:
     runs-on: macos-latest
 
-    strategy:
-      matrix:
-        include:
-          - os: iOS
-            destination: platform=iOS Simulator,name=iPhone 11
-
-    name: "Build with Xcode ${{ matrix.os }}"
+    name: "Build with Xcode"
 
     steps:
       - name: Checkout
@@ -53,4 +47,4 @@ jobs:
           xcodebuild build
           -workspace Example/ConfettiView.xcworkspace
           -scheme ConfettiView-Example 
-          -destination '${{ matrix.destination }}'
+          -destination 'platform=iOS Simulator,name=iPhone 11'
