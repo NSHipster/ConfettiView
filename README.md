@@ -1,9 +1,10 @@
 # ConfettiView
 
-[![CI Status](https://img.shields.io/travis/nshipster/ConfettiView.svg?style=flat)](https://travis-ci.org/nshipster/ConfettiView)
-[![Version](https://img.shields.io/cocoapods/v/ConfettiView-NSHipster.svg?style=flat)](https://cocoapods.org/pods/ConfettiView-NSHipster)
-[![License](https://img.shields.io/cocoapods/l/ConfettiView-NSHipster.svg?style=flat)](https://cocoapods.org/pods/ConfettiView-NSHipster)
-[![Platform](https://img.shields.io/cocoapods/p/ConfettiView-NSHipster.svg?style=flat)](https://cocoapods.org/pods/ConfettiView-NSHipster)
+[![Build Status][build status badge]][build status]
+[![License][license badge]][license]
+![CocoaPods platforms][cocoapods platforms badge]
+[![CocoaPods compatible][cocoapods badge]][cocoapods]
+[![Swift Package Manager compatible][swift package manager badge]][swift package manager]
 
 <img src="https://user-images.githubusercontent.com/7659/63643817-48c47100-c68e-11e9-9d02-cbcc79b178bf.gif" alt="NSHipster ConfettiView" width="320" height="690" align="right">
 
@@ -55,7 +56,7 @@ to download the library and integrate it into your Xcode project.
 > The module name for this library is "ConfettiView" ---
 > that is, to use it, you add `import ConfettiView` to the top of your Swift code
 > just as you would by any other installation method.
-> The pod is called "NSHipster-ConfettiView"
+> The pod is called "ConfettiView-NSHipster"
 > because there's an existing pod with the name "ConfettiView".
 
 ## Author
@@ -66,3 +67,13 @@ Mattt ([@mattt](https://twitter.com/mattt))
 
 ConfettiView is available under the MIT license.
 See the LICENSE file for more information.
+
+[build status]: https://github.com/NSHipster/ConfettiView/actions?query=workflow%3ACI
+[build status badge]: https://github.com/NSHipster/ConfettiView/workflows/CI/badge.svg
+[license]: https://opensource.org/licenses/MIT
+[license badge]: https://img.shields.io/cocoapods/l/ConfettiView-NSHipster.svg
+[cocoapods platforms badge]: https://img.shields.io/cocoapods/p/ConfettiView-NSHipster.svg
+[cocoapods]: https://cocoapods.org/pods/ConfettiView-NSHipster
+[cocoapods badge]: https://img.shields.io/cocoapods/v/ConfettiView-NSHipster.svg
+[swift package manager badge]: https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat
+[swift package manager]: https://swift.org/package-manager
