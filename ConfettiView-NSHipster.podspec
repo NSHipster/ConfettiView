@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   s.swift_versions = ['5.1']
 
-  s.source_files = 'ConfettiView/Classes/**/*'
+  s.source_files = 'Sources/**/*'
 
   s.frameworks = 'UIKit'
 end

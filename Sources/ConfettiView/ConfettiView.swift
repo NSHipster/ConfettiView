@@ -1,3 +1,4 @@
+#if canImport(UIKit)
 import UIKit
 
 private let kAnimationLayerKey = "com.nshipster.animationLayer"
@@ -223,3 +224,4 @@ fileprivate extension NSAttributedString {
         }
     }
 }
+#endif
