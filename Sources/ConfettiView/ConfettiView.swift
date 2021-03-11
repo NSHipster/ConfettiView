@@ -5,6 +5,9 @@ private let kAnimationLayerKey = "com.nshipster.animationLayer"
 
 /// A view that emits confetti.
 public final class ConfettiView: UIView {
+    
+    private var completion: ((ConfettiView) -> Void)?
+    
     public init() {
         super.init(frame: .zero)
         commonInit()
@@ -30,7 +33,10 @@ public final class ConfettiView: UIView {
                     3.0 seconds by default.
     */
     public func emit(with contents: [Content],
-                     for duration: TimeInterval = 3.0) {
+                     for duration: TimeInterval = 3.0,
+                     completion: ((ConfettiView) -> Void)? = nil) {
+        
+        self.completion = completion
         let layer = Layer()
         layer.configure(with: contents)
         layer.frame = self.bounds
@@ -155,6 +161,7 @@ extension ConfettiView: CAAnimationDelegate {
         if let layer = animation.value(forKey: kAnimationLayerKey) as? CALayer {
             layer.removeAllAnimations()
             layer.removeFromSuperlayer()
+            self.completion?(self)
         }
     }
 }
