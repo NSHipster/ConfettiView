@@ -118,7 +118,7 @@ public final class ConfettiView: UIView {
     // MARK: -
 
     private final class Layer: CAEmitterLayer {
-        var completion: ((Bool) -> Void)? = nil
+        var completion: ((Bool) -> Void)?
 
         func configure(with contents: [Content]) {
             emitterCells = contents.map { content in
