@@ -5,8 +5,6 @@ private let kAnimationLayerKey = "com.nshipster.animationLayer"
 
 /// A view that emits confetti.
 public final class ConfettiView: UIView {
-    private var completion: ((ConfettiView) -> Void)?
-
     public init() {
         super.init(frame: .zero)
         commonInit()
@@ -30,15 +28,19 @@ public final class ConfettiView: UIView {
         - contents: The contents to be emitted as confetti.
         - duration: The amount of time in seconds to emit confetti before fading out;
                     3.0 seconds by default.
+        - completion: A block called once after the confetti is done emitting.
+                      This block takes a single Boolean argument
+                      denoting whether the transition animation has completed
+                      by reaching the end of its duration.
     */
     public func emit(with contents: [Content],
                      for duration: TimeInterval = 3.0,
-                     completion: ((ConfettiView) -> Void)? = nil) {
-        self.completion = completion
+                     completion: ((Bool) -> Void)? = nil) {
         let layer = Layer()
         layer.configure(with: contents)
         layer.frame = self.bounds
         layer.needsDisplayOnBoundsChange = true
+        layer.completion = completion
         self.layer.addSublayer(layer)
 
         guard duration.isFinite else { return }
@@ -116,6 +118,8 @@ public final class ConfettiView: UIView {
     // MARK: -
 
     private final class Layer: CAEmitterLayer {
+        var completion: ((Bool) -> Void)? = nil
+
         func configure(with contents: [Content]) {
             emitterCells = contents.map { content in
                 let cell = CAEmitterCell()
@@ -156,10 +160,10 @@ public final class ConfettiView: UIView {
 
 extension ConfettiView: CAAnimationDelegate {
     public func animationDidStop(_ animation: CAAnimation, finished flag: Bool) {
-        if let layer = animation.value(forKey: kAnimationLayerKey) as? CALayer {
+        if let layer = animation.value(forKey: kAnimationLayerKey) as? Layer {
             layer.removeAllAnimations()
             layer.removeFromSuperlayer()
-            self.completion?(self)
+            layer.completion?(flag)
         }
     }
 }
