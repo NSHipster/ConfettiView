@@ -22,7 +22,9 @@ confettiView.emit(with: [
   .shape(.circle, .purple),
   .shape(.triangle, .lightGray),
   .image(star, .orange)
-])
+]) {
+  // Optional completion handler fires when animation finishes.
+}
 ```
 
 For more information,
