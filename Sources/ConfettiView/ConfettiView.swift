@@ -53,7 +53,7 @@ public final class ConfettiView: UIView {
         animation.keyTimes = [0, 0.5, 1]
         animation.isRemovedOnCompletion = false
 
-        layer.beginTime = CACurrentMediaTime()
+        layer.beginTime = layer.convertTime(CACurrentMediaTime(), from: nil)
         layer.birthRate = 1.0
 
         CATransaction.begin()
