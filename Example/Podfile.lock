@@ -1,5 +1,5 @@
 PODS:
-  - ConfettiView-NSHipster (0.2.0)
+  - ConfettiView-NSHipster (0.2.1)
 
 DEPENDENCIES:
   - ConfettiView-NSHipster (from `../`)

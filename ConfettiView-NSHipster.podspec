@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ConfettiView-NSHipster'
   s.module_name      = 'ConfettiView'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'A view that emits confetti.'
 
   s.description      = <<~DESC
